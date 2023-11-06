@@ -54,5 +54,7 @@ Template Firewall Kerio Control para Zabbix v4.4
 |{HOST.NAME} has been restarted (uptime < 10m)|<p>-</p>|<p>**Expression**: {Kerio Control Firewall:system.uptime[sysUpTime.0].last()}<10m</p><p>**Recovery expression**: </p>|Disaster|
 
 
+
+
 Baseado no template:
 https://github.com/zabbix/community-templates/tree/main/Network_Appliances/template_snmp_firewall_kerio/5.0
