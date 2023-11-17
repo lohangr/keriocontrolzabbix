@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>4.4</version>
-    <date>2023-11-03T12:45:23Z</date>
+    <date>2023-11-17T20:37:29Z</date>
     <groups>
         <group>
             <name>Templates</name>
@@ -220,7 +220,6 @@ The time (in hundredths of a second) since the network management portion of the
                         <trigger>
                             <expression>{max({$SNMP.TIMEOUT})}=0</expression>
                             <name>No SNMP data collection</name>
-                            <status>DISABLED</status>
                             <priority>WARNING</priority>
                             <manual_close>YES</manual_close>
                         </trigger>
@@ -262,6 +261,23 @@ The time (in hundredths of a second) since the network management portion of the
                             </trigger_prototypes>
                         </item_prototype>
                     </item_prototypes>
+                    <graph_prototypes>
+                        <graph_prototype>
+                            <name>Processor usage {#SNMPVALUE}</name>
+                            <ymax_type_1>FIXED</ymax_type_1>
+                            <graph_items>
+                                <graph_item>
+                                    <drawtype>GRADIENT_LINE</drawtype>
+                                    <color>199C0D</color>
+                                    <calc_fnc>ALL</calc_fnc>
+                                    <item>
+                                        <host>Kerio Control Firewall</host>
+                                        <key>fgHaStatsCpuUsage.[{#SNMPVALUE}]</key>
+                                    </item>
+                                </graph_item>
+                            </graph_items>
+                        </graph_prototype>
+                    </graph_prototypes>
                 </discovery_rule>
                 <discovery_rule>
                     <name>Discovery LLD Information Memory Firewall</name>
@@ -419,6 +435,36 @@ The time (in hundredths of a second) since the network management portion of the
                             </preprocessing>
                         </item_prototype>
                     </item_prototypes>
+                    <graph_prototypes>
+                        <graph_prototype>
+                            <name>Memory usage {#SNMPVALUE}</name>
+                            <graph_items>
+                                <graph_item>
+                                    <color>0040FF</color>
+                                    <item>
+                                        <host>Kerio Control Firewall</host>
+                                        <key>hrMemorySize.[{#SNMPVALUE}]</key>
+                                    </item>
+                                </graph_item>
+                                <graph_item>
+                                    <sortorder>1</sortorder>
+                                    <color>FF0000</color>
+                                    <item>
+                                        <host>Kerio Control Firewall</host>
+                                        <key>fgHaStatsMemUsage.[{#SNMPVALUE}]</key>
+                                    </item>
+                                </graph_item>
+                                <graph_item>
+                                    <sortorder>2</sortorder>
+                                    <color>199C0D</color>
+                                    <item>
+                                        <host>Kerio Control Firewall</host>
+                                        <key>memTotalFree.[{#SNMPVALUE}]</key>
+                                    </item>
+                                </graph_item>
+                            </graph_items>
+                        </graph_prototype>
+                    </graph_prototypes>
                 </discovery_rule>
                 <discovery_rule>
                     <name>Firewall Network Interface LLD Discovery</name>
