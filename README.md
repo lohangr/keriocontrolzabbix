@@ -53,7 +53,13 @@ Template Firewall Kerio Control para Zabbix v4.4
 |System name has changed (new name: {ITEM.VALUE})|<p>-</p>|<p>**Expression**: {Kerio Control Firewall:system.name.diff()}=1 and {Kerio Control Firewall:system.name.strlen()}>0</p><p>**Recovery expression**: </p>|Information|
 |{HOST.NAME} has been restarted (uptime < 10m)|<p>-</p>|<p>**Expression**: {Kerio Control Firewall:system.uptime[sysUpTime.0].last()}<10m</p><p>**Recovery expression**: </p>|Disaster|
 
-
+## Graphs
+|Name|Type|
+|----|----|
+|Uptime|<p>-</p>|<p> Graph item</p>|
+|Memory in use on %|<p>-</p>|<p> Graph item prototype</p>|
+|Memory usage {#SNMPVALUE}|<p>-</p>|<p> Graph item prototype</p>|
+|Processor usage {#SNMPVALUE}|<p>-</p>|<p> Graph item prototype</p>|
 
 
 Baseado no template:

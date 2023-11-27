@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>4.4</version>
-    <date>2023-11-17T20:37:29Z</date>
+    <date>2023-11-27T18:21:34Z</date>
     <groups>
         <group>
             <name>Templates</name>
@@ -437,6 +437,19 @@ The time (in hundredths of a second) since the network management portion of the
                     </item_prototypes>
                     <graph_prototypes>
                         <graph_prototype>
+                            <name>Memory in use on %</name>
+                            <graph_items>
+                                <graph_item>
+                                    <drawtype>GRADIENT_LINE</drawtype>
+                                    <color>199C0D</color>
+                                    <item>
+                                        <host>Kerio Control Firewall</host>
+                                        <key>memory.usage.percent.[{#SNMPVALUE}]</key>
+                                    </item>
+                                </graph_item>
+                            </graph_items>
+                        </graph_prototype>
+                        <graph_prototype>
                             <name>Memory usage {#SNMPVALUE}</name>
                             <graph_items>
                                 <graph_item>
@@ -659,6 +672,24 @@ The time (in hundredths of a second) since the network management portion of the
             </discovery_rules>
         </template>
     </templates>
+    <graphs>
+        <graph>
+            <name>Uptime</name>
+            <yaxismax>0.0000</yaxismax>
+            <show_work_period>NO</show_work_period>
+            <show_triggers>NO</show_triggers>
+            <type>PIE</type>
+            <graph_items>
+                <graph_item>
+                    <color>199C0D</color>
+                    <item>
+                        <host>Kerio Control Firewall</host>
+                        <key>system.uptime[sysUpTime.0]</key>
+                    </item>
+                </graph_item>
+            </graph_items>
+        </graph>
+    </graphs>
     <value_maps>
         <value_map>
             <name>zabbix.host.available</name>
