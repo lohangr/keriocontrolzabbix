@@ -56,10 +56,10 @@ Template Firewall Kerio Control para Zabbix v4.4
 ## Graphs
 |Name|Type|
 |----|----|
-|Uptime|<p>-</p>|<p> Graph item</p>|
-|Memory in use on %|<p>-</p>|<p> Graph item prototype</p>|
-|Memory usage {#SNMPVALUE}|<p>-</p>|<p> Graph item prototype</p>|
-|Processor usage {#SNMPVALUE}|<p>-</p>|<p> Graph item prototype</p>|
+|Uptime|<p> Graph item</p>|
+|Memory in use on %|<p> Graph item prototype</p>|
+|Memory usage {#SNMPVALUE}|<p> Graph item prototype</p>|
+|Processor usage {#SNMPVALUE}|<p> Graph item prototype</p>|
 
 
 Baseado no template:
