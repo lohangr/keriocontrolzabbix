@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>4.4</version>
-    <date>2023-11-27T18:21:34Z</date>
+    <date>2023-12-07T17:08:28Z</date>
     <groups>
         <group>
             <name>Templates</name>
@@ -301,14 +301,6 @@ The time (in hundredths of a second) since the network management portion of the
                                     <name>Memory</name>
                                 </application>
                             </applications>
-                            <trigger_prototypes>
-                                <trigger_prototype>
-                                    <expression>{min(5m)}&gt;999.99K</expression>
-                                    <name>Memory usage {HOST.NAME} it's too high!</name>
-                                    <priority>HIGH</priority>
-                                    <manual_close>YES</manual_close>
-                                </trigger_prototype>
-                            </trigger_prototypes>
                         </item_prototype>
                         <item_prototype>
                             <name>Memory Cache Usage</name>
@@ -389,6 +381,18 @@ The time (in hundredths of a second) since the network management portion of the
                                     <name>Memory</name>
                                 </application>
                             </applications>
+                            <trigger_prototypes>
+                                <trigger_prototype>
+                                    <expression>{last()}&gt;=70</expression>
+                                    <name>Memory usage {HOST.NAME} is over 70%</name>
+                                    <priority>WARNING</priority>
+                                </trigger_prototype>
+                                <trigger_prototype>
+                                    <expression>{last()}&gt;=90</expression>
+                                    <name>Memory usage {HOST.NAME} is over 90%</name>
+                                    <priority>HIGH</priority>
+                                </trigger_prototype>
+                            </trigger_prototypes>
                         </item_prototype>
                         <item_prototype>
                             <name>Share Memory Usage</name>
